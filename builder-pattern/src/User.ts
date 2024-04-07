@@ -1,31 +1,49 @@
-class User {
-  readonly id: number;
-  readonly name: string;
-  readonly phoneNumber?: string; // optional
-  readonly age?: number; // optional
+// User.ts
+export class User {
+  private readonly id: number;
+  private readonly name: string;
+  private readonly phoneNumber?: string;
+  private readonly age?: number;
 
-  private constructor(
-    id: number,
-    name: string,
-    phoneNumber?: string,
-    age?: number
-  ) {
-    this.id = id;
-    this.name = name;
-    this.phoneNumber = phoneNumber;
-    this.age = age;
+  private constructor(builder: UserBuilder) {
+    this.id = builder.id;
+    this.name = builder.name;
+    this.phoneNumber = builder.phoneNumber;
+    this.age = builder.age;
   }
 
-  static fromBuilder(builder: UserBuilder): User {
-    return new User(builder.id, builder.name, builder.phoneNumber, builder.age);
+  static builder(id: number, name: string): UserBuilder {
+    return new UserBuilder(id, name);
+  }
+
+  static createFromBuilder(builder: UserBuilder): User {
+    return new User(builder);
+  }
+
+  // Getters
+  getId(): number {
+    return this.id;
+  }
+
+  getName(): string {
+    return this.name;
+  }
+
+  getPhoneNumber(): string | undefined {
+    return this.phoneNumber;
+  }
+
+  getAge(): number | undefined {
+    return this.age;
   }
 }
 
-class UserBuilder {
-  readonly id: number;
-  readonly name: string;
-  phoneNumber?: string;
-  age?: number;
+// UserBuilder.ts
+export class UserBuilder {
+  public id: number;
+  public name: string;
+  public phoneNumber?: string;
+  public age?: number;
 
   constructor(id: number, name: string) {
     this.id = id;
@@ -46,12 +64,11 @@ class UserBuilder {
   }
 
   build(): User {
-    return User.fromBuilder(this);
+    return User.createFromBuilder(this);
   }
 }
 
-// Usage example:
-const user = new UserBuilder(1, "John Doe")
+const user = User.builder(1, "John Doe")
   .withPhoneNumber("+123456789")
   .withAge(30)
   .build();

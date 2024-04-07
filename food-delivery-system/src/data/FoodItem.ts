@@ -4,6 +4,7 @@ import { MealType } from "./MealType";
 import { CuisineType } from "./CuisineType";
 import { StarRating } from "./StarRating";
 
+//Use Bilder Pattern to refractor this
 export class FoodItem {
   constructor(
     private readonly id: number,

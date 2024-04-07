@@ -6,6 +6,7 @@ export class TicketGenerator {
   public generateTicket(vehicle: Vehicle, parkingSpot: ParkingSpot): Ticket {
     const ticketNum = this.getUniqueTicketNum();
     // logic to check if isFree & then park & persist in DB
+    // We can use findParkingSpotAPI For to get the parking spot and use the parking spot
     return new Ticket(ticketNum, vehicle, parkingSpot);
   }
 

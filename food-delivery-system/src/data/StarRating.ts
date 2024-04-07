@@ -1,3 +1,4 @@
+//Helpful for comparison
 export enum StarRating {
   ONE = 1,
   TWO = 2,

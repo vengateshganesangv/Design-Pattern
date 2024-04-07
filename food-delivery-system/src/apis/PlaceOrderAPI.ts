@@ -1,4 +1,7 @@
-import { User, Order, PaymentResponse, PaymentStatus } from "../data"; // Adjust paths based on your structure
+import { User } from "../data/User";
+import { Order } from "../data/Order"; // Adjust paths based on your structure
+import { PaymentResponse } from "../data/PaymentResponse"; // Adjust paths based on your structure
+import { PaymentStatus } from "../data/PaymentStatus"; // Adjust paths based on your structure
 import { PaymentManagerFactory } from "../factory/PaymentManagerFactory";
 import { OrderManager } from "../managers/OrderManager";
 import { UserManager } from "../managers/UserManager";
@@ -8,6 +11,7 @@ export class PlaceOrderAPI {
   private userManager: UserManager = new UserManager();
   private orderManager: OrderManager = new OrderManager();
 
+  //USER TOKEN ALONE to get userId to store it in the cart table - user_id,Item_Id,Status
   placeOrder(
     userToken: string,
     paymentInfo: Map<string, string>,

@@ -12,6 +12,7 @@ export class EntryPoint {
     return this.name;
   }
 
+  // Using Get Keyword No Use To call the parenthesis
   get isOpenStatus(): boolean {
     return this.isOpen;
   }

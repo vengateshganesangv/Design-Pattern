@@ -1,5 +1,6 @@
 import { VehicleType } from "../data/VechicleType";
 
+//Think In terms of HIGH Level Most Necessary Thing
 export class ParkingSpot {
   readonly floorNum: string;
   readonly vehicleType: VehicleType;

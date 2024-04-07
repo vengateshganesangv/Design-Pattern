@@ -1,9 +1,9 @@
 // Assuming these imports are correct, based on a similar directory structure.
 import { User } from "../data/User";
-import { FoodItem } from "./data/FoodItem";
-import { UserManager } from "./managers/UserManager";
-import { CartManager } from "./managers/CartManager";
-import { FoodItemSearcher } from "./searchers/FoodItemSearcher";
+import { FoodItem } from "../data/FoodItem";
+import { UserManager } from "../managers/UserManager";
+import { CartManager } from "../managers/CartManager";
+import { FoodItemSearcher } from "../searchers/FoodItemSearcher";
 
 export class AddToCartAPI {
   private userManager: UserManager = new UserManager();

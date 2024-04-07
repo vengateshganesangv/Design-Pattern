@@ -13,6 +13,7 @@ export class VehicleTypeManagerFactory {
     let vehicleTypeManager: VehicleTypeManager;
 
     if (vehicleType === VehicleType.TWO_WHEELER) {
+      //composition
       vehicleTypeManager = new TwoWheelerManager();
     } else if (vehicleType === VehicleType.FOUR_WHEELER) {
       vehicleTypeManager = new FourWheelerManager();

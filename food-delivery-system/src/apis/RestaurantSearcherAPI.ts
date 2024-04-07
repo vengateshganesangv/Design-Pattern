@@ -11,6 +11,7 @@ import { StarRatingFilter } from "../filters/StarRatingFilter";
 import { RestaurantSearcher } from "../searchers/RestaurantSearcher";
 
 export class RestaurantSearcherAPI {
+  //Restaurent+Filter
   searchRestaurant(
     restaurantName: string,
     mealType: MealType | null,

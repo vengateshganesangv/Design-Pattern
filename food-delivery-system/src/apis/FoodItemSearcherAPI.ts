@@ -4,6 +4,7 @@ import { CuisineType } from "../data/CuisineType";
 import { StarRating } from "../data/StarRating";
 
 export class FoodItemSearcherAPI {
+  //FoodSearcher+Filter
   searchFoodItems(
     foodItemName: string,
     mealType: MealType,

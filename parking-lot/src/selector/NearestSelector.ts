@@ -11,6 +11,7 @@ export class NearestSelector implements ParkingSpotSelector {
   }
 
   selectSpot(parkingSpots: ParkingSpot[]): ParkingSpot {
+    //This will work on the entryPoint and select Parking Spot
     return new ParkingSpot(
       "2",
       VehicleType.TWO_WHEELER,

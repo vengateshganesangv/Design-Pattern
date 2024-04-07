@@ -8,10 +8,10 @@ export class StarRatingFilter implements FoodItemFilter, RestaurantFilter {
   constructor(private readonly rating: StarRating) {}
 
   filterByFoodItem(foodItem: FoodItem): boolean {
-    return foodItem.getStarRating().getVal() >= this.rating.getVal();
+    return foodItem.getStarRating() >= this.rating;
   }
 
   filterByRestaurant(restaurant: Restaurant): boolean {
-    return restaurant.getRating().getVal() >= this.rating.getVal();
+    return restaurant.getRating() >= this.rating;
   }
 }
